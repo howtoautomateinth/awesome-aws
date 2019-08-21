@@ -9,5 +9,5 @@ Categorize awesome things in AWS
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers
 
 ### Tools
-- [AWS 2D Diagram](https://creately.com/) visualize architecture
+- [AWS 2D Diagram](https://www.draw.io) visualize architecture
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture

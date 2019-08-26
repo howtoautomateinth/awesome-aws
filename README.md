@@ -1,6 +1,10 @@
 # Awesome AWS Collection
 Categorize awesome things in AWS 
 
+### Route 53
+- [How DNS Works](https://howdns.works/)
+- [How HTTPS Works](https://howhttps.works/)
+
 ### VPC (Virtual Private Network)
 - [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
 

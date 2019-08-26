@@ -17,5 +17,5 @@ Categorize awesome things in AWS
 - [AWS 2D Diagram](https://www.draw.io) visualize architecture
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture
 
-### Architecture Guide line
+### Architecture Guideline
 - [Scaling Up to Your First 10 Million Users](https://www.youtube.com/watch?v=Ma3xWDXTxRg)

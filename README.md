@@ -1,6 +1,9 @@
 # Awesome AWS Collection
 Categorize awesome things in AWS 
 
+### EC2
+- [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
+
 ### Route 53
 - [How DNS Works](https://howdns.works/)
 - [How HTTPS Works](https://howhttps.works/)

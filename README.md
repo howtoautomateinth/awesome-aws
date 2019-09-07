@@ -19,7 +19,9 @@ Categorize awesome things in AWS
 ### Tools
 - [AWS 2D Diagram](https://www.draw.io) visualize architecture
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture
+- [Chaos Monkey](https://github.com/Netflix/chaosmonkey) randomly terminates virtual machine instances and containers that run inside of your production environment for testing production server [More](https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116) 
 
 ### Architecture Guideline
 - [Microservices Design Guide](https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8)
 - [Scaling Up to Your First 10 Million Users](https://www.youtube.com/watch?v=Ma3xWDXTxRg)
+

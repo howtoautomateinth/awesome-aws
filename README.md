@@ -25,3 +25,5 @@ Categorize awesome things in AWS
 - [Microservices Design Guide](https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8)
 - [Scaling Up to Your First 10 Million Users](https://www.youtube.com/watch?v=Ma3xWDXTxRg)
 
+## Cost Management
+- [EC2](https://www.ec2instances.info/) price comaprision

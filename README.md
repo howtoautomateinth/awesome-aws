@@ -8,11 +8,19 @@ Categorize awesome things in AWS
 - [How DNS Works](https://howdns.works/)
 - [How HTTPS Works](https://howhttps.works/)
 
+## Network Topic
 ### VPC (Virtual Private Network)
 - [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
 - [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
 
-### High Availability 
+## Storage Topic
+### AWS BLOCK STORAGE
+Considering information about using block storage type
+- [Random VS Sequential 1](https://stackoverflow.com/questions/2100584/difference-between-sequential-write-and-random-write)
+- [Random VS Sequential 2](https://blog.open-e.com/random-vs-sequential-explained/)
+- [Random VS Sequential 3](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
+
+## High Availability Topic
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers
 

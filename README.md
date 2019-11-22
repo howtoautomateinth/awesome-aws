@@ -16,7 +16,7 @@ Categorize awesome things in AWS
 ## Storage Topic
 #### AWS BLOCK STORAGE
 Considering information about using block storage type
-- [Random VS Sequential 1](https://stackoverflow.com/questions/2100584/difference-between-sequential-write-and-random-write)
+- [Random VS Sequential 1](https://stackoverflow.com/questions/27180409/what-is-a-sequential-write-and-what-is-random-write?noredirect=1&lq=1)
 - [Random VS Sequential 2](https://blog.open-e.com/random-vs-sequential-explained/)
 - [Random VS Sequential 3](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
 

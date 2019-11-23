@@ -20,6 +20,9 @@ Considering information about using block storage type
 - [Random VS Sequential 2](https://blog.open-e.com/random-vs-sequential-explained/)
 - [Random VS Sequential 3](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
 
+#### AWS S3
+- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
+
 ## High Availability Topic
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers

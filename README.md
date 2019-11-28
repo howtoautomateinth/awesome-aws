@@ -4,11 +4,14 @@ Categorize awesome things in AWS
 ## Elastic Compute Cloude (EC2)
 
 ## Virutal Private Cloud
-> Network ACLs are stateless but Security group are stateful
 - [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
+#### Tips
+- Network ACLs are stateless but Security group are stateful
+- Rule order in Network ACLs process top-to-bottom, Security group process based on number the lower number gets processed first
 
 ## Storage on Cloud
 - [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
+#### Tips
 #### AWS BLOCK STORAGE
 
 >Considering information about using block storage type (SSD = Random & HDD = Sequential)

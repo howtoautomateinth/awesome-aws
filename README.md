@@ -23,6 +23,13 @@ The storage offerings of AWS can be divided into three major categories
 	- Elastic Block Storage (EBS)
 > [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
 
+#### ENCRYPTION
+two main ways of securing the data
+- Data in transit
+	- HTTPS and use SSL-encrypted
+- Data at rest
+	- S3 Encryption
+	- EBS Encryption
 
 #### AWS BLOCK STORAGE
 
@@ -33,6 +40,10 @@ The storage offerings of AWS can be divided into three major categories
 #### AWS Simple Storage Services (S3)
 > In short, Hex Hash Prefix naming help performance in S3 
 - [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
+- S3 Encryption
+	- SSE with Amazon S3 Key Management (SSE-SE)
+	- SSE with customer-provided keys (SSE-C)
+	- SSE with AWS Key Management Service KMS (SSE-KMS)
 
 ## Auto Scaling
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)

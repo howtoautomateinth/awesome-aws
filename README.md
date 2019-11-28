@@ -43,8 +43,11 @@ two main ways of securing the data
 - [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
 - S3 Encryption
 	- SSE with Amazon S3 Key Management (SSE-SE)
+		- S3 will manage encryption keys for you. Each object is encrypted using a per-object key
 	- SSE with customer-provided keys (SSE-C)
+		- Custom will send encryption key in your upload request,S3 doesn’t store your encryption key anywhere
 	- SSE with AWS Key Management Service KMS (SSE-KMS)
+		- S3 will manage encryption keys in KMS, can seperate permissions in KMS additional layer of control
 
 ## Auto Scaling
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)

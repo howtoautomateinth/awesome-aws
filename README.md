@@ -11,7 +11,18 @@ Categorize awesome things in AWS
 - The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
 
 ## Storage on Cloud
-- [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
+The storage offerings of AWS can be divided into three major categories
+
+- File
+   - Elastic File System (EFS)
+- Object
+	- Simple Storage Services (S3)
+	- Glacier 
+-  Block
+	- Instance Store on EC2
+	- Elastic Block Storage (EBS)
+> [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
+
 #### Tips
 #### AWS BLOCK STORAGE
 

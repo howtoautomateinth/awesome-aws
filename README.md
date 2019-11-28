@@ -6,7 +6,6 @@ Categorize awesome things in AWS
 ## Virutal Private Cloud
 > Network ACLs are stateless but Security group are stateful
 - [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
-- [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
 
 ## Storage on Cloud
 - [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
@@ -38,4 +37,5 @@ Categorize awesome things in AWS
 ## Tools
 - [AWS 2D Diagram](https://www.draw.io) visualize architecture
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture
+- [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
 - [Chaos Monkey](https://github.com/Netflix/chaosmonkey) randomly terminates virtual machine instances and containers that run inside of your production environment for testing production server [More](https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116) 

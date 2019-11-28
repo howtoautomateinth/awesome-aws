@@ -33,7 +33,7 @@ two main ways of securing the data
 
 #### BLOCK STORAGE
 
--Considering information before using block storage type (SSD = Random & HDD = Sequential)
+- Considering information before using block storage type (SSD = Random & HDD = Sequential)
 	- [Random VS Sequential 1](https://stackoverflow.com/questions/27180409/what-is-a-sequential-write-and-what-is-random-write?noredirect=1&lq=1)
 	- [Random VS Sequential 2](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
 - Block Storage Type

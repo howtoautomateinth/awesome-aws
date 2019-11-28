@@ -34,9 +34,13 @@ two main ways of securing the data
 #### BLOCK STORAGE
 
 >Considering information about using block storage type (SSD = Random & HDD = Sequential)
-
 - [Random VS Sequential 1](https://stackoverflow.com/questions/27180409/what-is-a-sequential-write-and-what-is-random-write?noredirect=1&lq=1)
 - [Random VS Sequential 2](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
+- Block Storage Type
+	- EC2 instance store
+	- EBS SSD-backed volume
+	- EBS HDD-backed volume
+
 #### OBJECT
 ##### AWS Simple Storage Services (S3)
 - [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
@@ -48,6 +52,20 @@ two main ways of securing the data
 		- Custom will send encryption key in your upload request,S3 doesn’t store your encryption key anywhere
 	- SSE with AWS Key Management Service KMS (SSE-KMS)
 		- S3 will manage encryption keys in KMS, can seperate permissions in KMS additional layer of control
+- S3 Access Control
+	- Access Policies
+	- Bucket Policies
+	- Access Control List
+- S3 Storage Class
+	- Standard
+	- Standard Infrequent Access
+	- Reduced Redundancy Storage (RRS)
+	- S3 One Zone-Infrequent Access
+	- Glacier
+- S3 Object Lifecycle Management
+	- Transition action
+	- Expiration action
+- S3 Cross-Region Replication
 
 ## Auto Scaling
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)

@@ -39,8 +39,8 @@ two main ways of securing the data
 - [Random VS Sequential 2](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
 #### OBJECT
 ##### AWS Simple Storage Services (S3)
-> In short, Hex Hash Prefix naming help performance in S3 
 - [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
+	- > In short, Hex Hash Prefix naming help performance in S3 
 - S3 Encryption
 	- SSE with Amazon S3 Key Management (SSE-SE)
 		- S3 will manage encryption keys for you. Each object is encrypted using a per-object key

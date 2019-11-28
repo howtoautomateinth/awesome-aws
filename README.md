@@ -24,7 +24,7 @@ The storage offerings of AWS can be divided into three major categories
 > [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
 
 #### ENCRYPTION
-two main ways of securing the data
+Two main ways of securing the data
 - Data in transit
 	- HTTPS and use SSL-encrypted
 - Data at rest

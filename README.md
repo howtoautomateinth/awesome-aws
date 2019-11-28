@@ -31,13 +31,14 @@ two main ways of securing the data
 	- S3 Encryption
 	- EBS Encryption
 
-#### AWS BLOCK STORAGE
+#### BLOCK STORAGE
 
 >Considering information about using block storage type (SSD = Random & HDD = Sequential)
 
 - [Random VS Sequential 1](https://stackoverflow.com/questions/27180409/what-is-a-sequential-write-and-what-is-random-write?noredirect=1&lq=1)
 - [Random VS Sequential 2](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
-#### AWS Simple Storage Services (S3)
+#### OBJECT
+##### AWS Simple Storage Services (S3)
 > In short, Hex Hash Prefix naming help performance in S3 
 - [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
 - S3 Encryption

@@ -8,6 +8,7 @@ Categorize awesome things in AWS
 #### Tips
 - Network ACLs are stateless but Security group are stateful
 - Rule order in Network ACLs process top-to-bottom, Security group process based on number the lower number gets processed first
+- The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
 
 ## Storage on Cloud
 - [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)

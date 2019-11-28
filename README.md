@@ -4,7 +4,7 @@ Categorize awesome things in AWS
 ## Elastic Compute Cloude (EC2)
 
 ## Virutal Private Cloud
-- [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
+> [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
 
 - Network ACLs are stateless but Security group are stateful
 - Rule order in Network ACLs process top-to-bottom, Security group process based on number the lower number gets processed first

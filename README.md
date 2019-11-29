@@ -2,8 +2,6 @@
 Categorize awesome things in AWS 
 
 ## Elastic Compute Cloude (EC2)
-
-## Virutal Private Cloud
 #### Pricing 
 Three categories 
 - On-demand instance
@@ -35,6 +33,7 @@ Three categories
 	- group of instances that are each placed on distinct racks, with each rack having its own network and power source
 	- reduces the risk of simultaneous failures that might occur when instances share the same racks
 
+## Virutal Private Cloud
 ### AMAZON VPC COMPONENTS
 #### VPC
 - first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)

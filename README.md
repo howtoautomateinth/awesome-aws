@@ -4,11 +4,62 @@ Categorize awesome things in AWS
 ## Elastic Compute Cloude (EC2)
 
 ## Virutal Private Cloud
-> [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
 
-- Network ACLs are stateless but Security group are stateful
-- Rule order in Network ACLs process top-to-bottom, Security group process based on number the lower number gets processed first
-- The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
+### AMAZON VPC COMPONENTS
+#### VPC
+- first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
+	- If you create a VPC with a small size and later realize that you need more IP addresses, you can create a new VPC with a bigger IP address range and then migrate your applications from the old VPC to the new one
+	- limited to a region
+	
+#### Subnet
+- Subnet is short for subnetwork, With subnetting you can divide a network into multiple networks
+- Subnet is tied to only one availability zone, If you have three AZs in a VPC, for example, you need to create a separate subnet in each AZ
+
+#### Route Table
+- route table is a table consisting of certain rules known as routes
+	- provide information to route when requested
+- two columns
+	- Destination
+		- the destinations specifies the ip range that can be directed to the target
+		- Local destination, which indicates internal routing in VPC
+	- Target
+		- target is where the traffic is directed 
+
+#### Internet Gateway
+- allows your VPC to communicate with the Internet
+
+#### Network Address Translation (NAT)
+> NAT device, you can enable any instance in a private subnet to connect to the Internet
+- two types of NAT devices available withint AWS
+	- NAT instances
+		- in public subnet to allow private subnet through the internet
+		- created in a specific AZ, redundant NAT instances in different AZs
+	- NAT gateway
+		- same function as that of a NAT instance
+		- you must specify an elastic IP address
+		- created in a specific AZ, redundant NAT gateway in different AZs
+- use case: If you want to do some firmware updates in the database server or if you want to download some database patches, how do you download them? Network Address Translation (NAT) tries to solve that problem
+
+#### Elastic IP Address (EIP)
+> Every time you launch a new EC2 instance in AWS, you get a new IP address. Sometimes it becomes a challenge since you need to update all the applications every time there is an IP address change
+- an EIP is a static IP address to address that issues
+- There is no charge for using an EIP
+
+#### Accessing and Permission
+##### Security Group
+- virtual firewall applied at the instance level
+- There are no deny rules, so the only way to block traffic is to not allow it
+- stateful
+	- change inbound (ingress) also applied to outbound (egress)
+##### Network Access Control list (NACL)
+- firewall at a subnet level for your VPC
+- default, each custom NACL denies all inbound and outbound traffic until you add rules
+- contain a numbered list of rules that are evaluated in order to decide whether the traffic is allowed to a particular subnet associated with the NACL
+	- starting with the lowest numbered rule
+	- recommend to start with number 100, highest number is 32766
+- stateless
+	- have to create rule for inbound and outbound
+- [Different Between Security Group and Network ACLs](https://medium.com/awesome-aws/aws-difference-between-security-groups-and-network-acls-adc632ea29ae)
 
 ## Storage on Cloud
 The storage offerings of AWS can be divided into three major categories

@@ -235,8 +235,72 @@ S3 is partitioning based on the key prefix
 ## Identity and Access Management and Security
 
 ## Auto Scaling
+> the ability to spin servers up when your workloads require additional resources and spin them back down when demand drops
+### Auto Scaling Components
+#### Launch Configuration
+> stores all the information about instance such as AMI,instance type,key pair, security group
+- create and link it with an Auto Scaling group
+- 1-to-Many, Many Auto Scaling group can use 1 Launch Configuration
+- Once you create an Auto Scaling group, you can’t edit the launch configuration tied up with it
+#### Auto Scaling Groups
+> where you define the logic for scaling up and scaling down. It has all the rules and policies that govern how the EC2 instances will be terminated or started
+- three types of scaling policies
+	- Simple Scaling
+		- select an alarm, which can be CPU utilization, disk read, disk write, network in or network out, and so on, and then scale up or down
+		- also define how long to wait before starting or stopping a new instance. This waiting period is also called the cooldown period
+	- Simple Scaling with Steps
+		- same with Simple Scaling but can step it up due to condition 
+	- Target-tracking Scaling 
+		- can select a predetermined metric or you choose your own metric and then set it to a target value
+		- use case: set target 50 percent of CPU then Auto Scaling will automatically scale up or scale down the EC2 instances to maintain a 40 percent CPU utilization 
+- Termination Policy
+	- decide how exactly you are going to terminate the EC2 servers when you have to scale down
+	- default, will select AZ have the most instances, and at least one instance that is not protected from scale in
+### Elastic Load Balancing
+> the load balancers that you are going to use will be always deployed across multiple AZs. Internally, there will be multiple load balancers deployed in a separate ELB VPC, spanning multiple AZs to provide a highly available architecture
+Three main load balancers
+
+> Auto Scaling and ELB, it is recommended that you use multiple AZs whenever possible
+
+- Network Load Balancer
+	- acts in layer 4 the OSI Model
+	- supports both TCP and SSL
+	- no X-Forwarded-For headers since it does not make any changes or touch the packet
+- Application Load Balancer
+	- acts in layer 7 of the OSI Model
+	- supports HTTP and HTTPS
+	- the headers might be modified
+	- X-Forwarded-For header containing the client IP address
+	- Ability to do
+		- host-based routing
+		- path-based routing
+- Classic Load Balancer
+	- Supports the classic EC2 instances
+	- Operates on layer 4 as well as on layer 7 of the OSI model
+	- X-Forwarded-For header containing the client IP address
+
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers
+
+#### Core Component Of The Load Balancer
+- Listeners
+	- define the protocol and port on which the load balancer listens for incoming connections
+- Target Groups and Target
+	- logical groupings of targets behind a load balancer
+- Rules
+	- link between listeners and target groups and consist of conditions and actions
+	- Rules can forward requests to a specified target group
+	- Each rule has a priority attached to it
+		- The rule with the highest priority will be executed first
+- Health Check
+	- run a health check, which is going to check the target or target group at a certain interval of time defined by you to make sure the target or the target group is working fine
+	- With the health check request, you specify the port, protocol, and ping path
+	- if the instance keep failing it will be replaced by a new EC2 instance
+	
+##### Cross-zone load balancing
+> distributes the requests evenly across multiple availability zones
+- enabled by default in an application load balancer
+- cross-zone load balancing happens across the targets and not at the AZ level
 
 ## Deploying and Monitoring
 - [How DNS Works](https://howdns.works/)

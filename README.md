@@ -344,9 +344,136 @@ Three main load balancers
 - enabled by default in an application load balancer
 - cross-zone load balancing happens across the targets and not at the AZ level
 
-## Deploying and Monitoring
+## Deploying and Monitoring Applications on AWS
+### Lambda
+> AWS Lambda is a compute service that runs your back-end code in response to events
+- The code you run on AWS Lambda is called a Lambda function
+- Low cost and does not require any up-front investment
+- Select the event source to monitor such as an Amazon S3 bucket or Amazon DynamoDB table, event can trigger your function
+- Charged for every 100ms your code executes and the number of times your code is triggered. This cost is also based on the memory consumption
+### Amazon API Gateway
+> API Gateway is a fully managed service that makes it easy for developers to define, publish, deploy, maintain, monitor, and secure APIs at any scale
+### Amazon Kinesis
+> ability to process and analyze becomes extremely important because that governs how you are going to serve your customers
+- traditional analytics, you gather the data, load it periodically into a database, and analyze it hours, days, or weeks later
+- stream-processing applications process data continuously in real time, even before it is stored
+Three Categories
+- Amazon Kinesis Data Streams
+	- enables you to build custom applications that process or analyze streaming data for specialized needs
+- Amazon Kinesis Data Firehose
+	- easiest way to load streaming data into data stores and analytics tools
+	- pay only for the amount of data you transmit through the service
+- Amazon Kinesis Data Analytics
+	- the easiest way to process and analyze real-time, streaming data
+	- use standard SQL to process your data streams, so you don’t have to learn any new programming language
+### Amazon CloudFront
+> allows you to distribute content with low latency and provides high data transfer speeds
+- ensures that end-user requests are served by the closest edge location
+- pay only for the data transfers and requests you actually use
+### CloudFront Key Concepts
+- Edge Location
+	- data centers called edge locations
+	- located in major cities across the globe
+- Regional edge Location
+	- located between your origin web server and the global edge locations that serve content directly to your viewers
+	- Regional edge caches have a larger cache width than any individual edge location, so objects remain in the cache longer at the nearest regional edge caches
+#### Signed URL or Signed Cookies
+- protect it from unauthorized access via CloudFront signed URLs
+	- includes additional information, for example, an expiration date and time, that gives you more control over access to your content
+### Amazon Route 53
+- DNS translates human-readable names such as www.example.com into the numeric IP addresses such as 192.0.0.3
+	- phone book
+#### Routing Policies
+- Weighted round robin
+	- Route traffic to those resources in proportions that you specify
+- Latency-based routing
+	- Best latency, you can use latency-based routing
+- Failover routing
+	- When this region fails, you can do failover routing and point to a static web site running from a different region
+- Geo DNS routing 
+	- Directing requests to specific endpoints based on the geographic location from which the request originates
+##### Tips
 - [How DNS Works](https://howdns.works/)
 - [How HTTPS Works](https://howhttps.works/)
+
+### AWS Web Application Firewall (AWF)
+> protect web sites and applications against attacks that could affect application availability, result in data breaches, cause downtime, compromise security, or consume excessive resources
+- Integrated
+	- CloudFront
+	- Application Load Balancers (ALBs)
+- Two types of rules in AWS
+	- Regular rules
+		- conditions to target specific requests
+	- Rate based rules
+		- same with regular but have rate limit in five-minute intervals
+
+### AWS Simple Queue Service (SQS)
+> Decouple the processing of larger jobs into small parts that can be run independent of each other
+- A message queue is a form of asynchronous service-to-service communication
+- Three players which is the producer, queue, and consumer
+- Key Features of Amazon SQS
+	- redundant across multiple AZs in each region
+	- retained up to 14 days
+	- can contain up to 256KB of text data, including XML, JSON, and unformatted text
+- Two types of SQS
+	- Standard
+		- It supports at-least-once message delivery
+	- FIFO
+		- A first in, first out (FIFO) queue guarantees first in, first out delivery and also exactly once processing
+		- 300 transactions per second
+		
+### AWS Simple Notification Service (SNS)
+> web service used to send notifications from the cloud
+- create a “topic” identifying a specific subject or event type
+	- the publisher and subscriber model
+	
+### AWS Step Functions And Amazon Simple Workflow (SWF)
+> fully managed service that makes it easy to coordinate the components of distributed applications and microservices using visual workflow
+- Define your application as a state machine, a series of steps that together capture the behavior of the app
+- Tasks are units of work, and this work may be performed by AWS Lambda functions, Amazon EC2 instances, containers, or on-premises servers; anything that can communicate with the Step Functions API may be assigned a task
+
+### AWS Elastic Beanstalk
+> simplest and fastest way of deploying web applications, just upload your code
+- provision all the resources such as Amazon EC2, Amazon Elastic Container Service (Amazon ECS), Auto Scaling, and Elastic Load Balancing for you behind the scenes
+
+### AWS Opsworks
+- automate operational tasks like software configuration, server scaling, deployments, and database setup
+- provides managed instances of Chef and Puppet
+
+### AWS Cognito
+- user identity and data synchronization service that makes it really easy for you to manage user data for your apps across multiple mobile or connected devices
+- service also supports
+	- public login providers such as Google, Facebook, and Amazon, and through enterprise identity providers such as Microsoft Active Directory using SAML
+
+### AWS Elastic MapReduce (EMR)
+> managed Hadoop framework that distributes the computation of your data over multiple Amazon EC2 instances
+
+### AWS CloudFormation
+> provision infrastructure stacks directly from a collection of scripts, it is not simple
+- template is a JSON- or YAML-formatted text file
+	- template you can specify the resource that CloudFormation is going to build. For example, you can specify a specific type of an EC2 instance as a resource in your CloudFormation template
+	
+### AWS CloudWatch
+> monitor the health checks, look at the utilization, and view performance
+- Apart from the default metrics available, you can also create your own custom metrics using your application and monitor them via Amazon CloudWatch
+	- one-minute data point, the retention is 15 days
+	- five-minute data point, the retention is 63 days
+	- one-hour data point, the retention is 15 months or 455 days
+
+### AWS Config
+> fully managed service that provides you with a detailed inventory of your AWS resources and their current configuration in an AWS account. It continuously records configuration changes to these resources
+
+### AWS Trusted Advisor
+> provides best practices (or checks) in five categories
+- Cost Optimization
+- Security
+- Fault Tolerance
+- Performance
+- Service Limits
+
+### AWS Organizations
+> Some of these enterprises have added more accounts incrementally as individual teams and divisions make the move to the cloud
+- offers policy-based management from multiple AWS accounts. You can create groups of accounts and then apply policies to those groups
 
 ## Architecture Guideline
 - [Microservices Design Guide](https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8)

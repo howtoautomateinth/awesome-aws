@@ -276,6 +276,85 @@ offers the following authentication features
 		- no need to share security credentials or store long-term credentials
 	- IAM roles for EC2 instances make it easier for your applications and command-line tools to securely access AWS service APIs from EC2 instances
 
+## Database on AWS
+### Amazon RDS
+> RDS fully manages the host, operating system, and database version you are running on
+- have limited ability to modify the configuration that is normally managed on the host operating system
+- choose if you want to focus on tasks that bring value to your business 
+#### High Availability on RDS
+- deploy a database in a multi-AZ architecture
+	- master database
+		- data on the primary database is synchronously replicated to the storage in the standby configuration
+	- standby database
+		- does not remain open when it acts as a standby database
+		- the failover happens, the standby is automatically propagated to the master
+#### Scaling on RDS
+- Changing the instance type
+- Read Replica
+	- is a read-only copy of your master database that is kept in sync with your master database
+	- offload the read-only queries to it
+	- up to 15 read replicas
+	- replication is not synchronous, it is asynchronous so if you promote a read replica to a master, there could be some data loss
+	- read replica
+		- same region
+		- intra-region
+			- additional read replicas within the same AWS region, but in the same or different availability zones from your master database
+		- different region 
+			- called a cross-regional read replica
+#### Security on RDS
+- database in the private subnet
+- data enryption 
+	- data-at-rest encryption
+	- AES-256 encryption algorithm to encrypt your data on the server
+	- a default key for RDS is created in the Key Management Service (KMS)
+
+#### Backups, Restores, and Snapshots
+- Database backup is scheduled for every day
+- Aurora, you don’t have to back up manually since everything is automatically backed up continuously to the S3 bucket
+	- retained for 35 days
+- Creating a snapshot
+	- there is a temporary I/O suspension that can last from a few seconds to a few minutes
+	- created in S3
+	
+### Amazon Aurora
+> cloud-optimized, MySQL- and PostgreSQL-compatible
+- There is a separate storage layer that is automatically replicated across six different storage nodes in three different availability zones
+	- no additional cost
+- data mirroring happens synchronously no data loss
+- grows up to 64TB
+- supports up to 15 copies of read replica
+	- data replication happens at the storage level in a synchronous
+- Aurora is no concept of standby database, and the read replica is prompted to a master or primary database node when the primary node goes down
+
+### Amazon Redshift
+> managed data warehouse soltion
+- data warehouses are very much read-oriented systems
+
+#### Amazon Redshift Architecture
+- Redshift cluster consists of
+	- Leader node
+		- performs a few roles. It acts as a SQL endpoint for the applications
+		- communicates with the compute nodes for processing any query
+	- Compute node
+##### Encryption
+- If the encryption is enabled in a cluster, it becomes immutable which means you can't disable
+	- If at a later phase you decide to encrypt the data, then the only way is to unload your data from the existing cluster and reload it in a new cluster with the encryption setting
+	
+### Amazon DynamoDB
+> fully managed NoSQL database service that provides fast and predictable performance with seamless scalability
+- can be used in advertising for capturing browser cookie state, in mobile applications for storing application data and session state, in gaming applications for storing user preferences and application state and for storing players’ game state, in consumer “voting” applications for reality TV contests, in Super Bowl commercials, in large-scale
+- Benefits of Amazon DynamoDB
+	- Scalable
+		- running a larger NoSQL cluser.DynamoDB is scalable and can automatically scale up and down depending on your application request
+
+### Amazon ElasticCache
+> is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud
+- caching to significantly improve latency and throughput for many read-heavy application workloads
+- Two engine in elasticcache
+	- Memcached
+	- Redis
+		- support replication for multi-AZ redundancy
+
 ## Auto Scaling
 > the ability to spin servers up when your workloads require additional resources and spin them back down when demand drops
 ### Auto Scaling Components

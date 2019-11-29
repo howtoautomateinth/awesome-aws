@@ -4,6 +4,36 @@ Categorize awesome things in AWS
 ## Elastic Compute Cloude (EC2)
 
 ## Virutal Private Cloud
+#### Pricing 
+Three categories 
+- On-demand instance
+	- pay just for the usage on a flat hourly rate or per-second billing
+- Reserved instance
+	- 75 percent discount compared to an on-demand instance
+	- have to know how many resources your workload is going to take and for how long (at least a year)
+	- Payment options
+		- up-front reserved
+		- partial up-front reserved
+		- no up-front reserved
+	- two subcategories of it
+		- standard reserved instance
+		- convertible reserved instance
+			- have ability and flexibility to exchange the instance from one class of family to another class if your computing need changes
+- Spot instance
+	- biding
+	- 90 percent discount compared to on-demand pricing
+	- great for workloads that can restart from where they failed (in other words, can interrupt job)
+#### Placement Group
+Three categories
+- Cluster
+	- is a logical grouping of instances within a single Availability Zone
+	- To provide the lowest latency and the highest packet-per-second network performance for your placement group
+- Partition
+	- spreads your instances across logical partitions such that groups of instances in one partition do not share the underlying hardware
+	- used by large distributed and replicated workloads, such as Hadoop, Cassandra, and Kafka
+- Spread
+	- group of instances that are each placed on distinct racks, with each rack having its own network and power source
+	- reduces the risk of simultaneous failures that might occur when instances share the same racks
 
 ### AMAZON VPC COMPONENTS
 #### VPC

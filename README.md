@@ -58,7 +58,8 @@ Two main ways of securing the data
 					- for noncritical support infrequently accessed
 #### FILE STORAGE
 > a file system interface and file system semantics to Amazon EC2 instances
-Interesting Feature
+
+##### Interesting Feature
 - Shared storage 
 	- shared across thousands of EC2 instances
 - Elastic and Scalable
@@ -68,7 +69,6 @@ Interesting Feature
 - AWS SNOWBALL
 	- AWS import/export tool, provides a petabyte-scale data transfer service
 	- Help transfer TB highspeed to Amazon S3
-
 
 #### OBJECT
 ##### AWS Simple Storage Services (S3)
@@ -120,7 +120,7 @@ Interesting Feature
 	- replicate the objects in an S3 bucket to a different region
 	- use case: compliance requirement and disaster recovery considerations to keep copies of critical data that are hundreds of miles apart
 
-###### S3 Performance
+##### S3 Performance
 
 > Amazon S3 bucket is going to exceed 100 PUT/LIST/DELETE requests per second or 300 GET requests per second
 S3 is partitioning based on the key prefix

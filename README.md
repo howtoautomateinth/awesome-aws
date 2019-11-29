@@ -45,6 +45,21 @@ Categorize awesome things in AWS
 - an EIP is a static IP address to address that issues
 - There is no charge for using an EIP
 
+#### VPC Endpoint
+- VPC endpoint does is give you the ability to connect to VPC and AWS services directly using a private connection
+
+#### Drecit Connect
+- a dedicated private connection from your corporate data center to your VPC
+
+#### VPC Peering
+- VPC peering helps to connect one virtual private cloud to another and route the traffic across the virtual private clouds
+- You can’t peer VPCs across regions
+- one-to-one relationship two VPCs
+- can not use transit point between VPC need to peering itself
+
+#### VPC Flow Logs
+- enable you to capture information about the IP traffic going to and from network interfaces in your VPC
+
 #### Accessing and Permission
 ##### Security Group
 - virtual firewall applied at the instance level

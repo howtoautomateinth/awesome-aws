@@ -232,7 +232,49 @@ S3 is partitioning based on the key prefix
 	- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
 	- 4-character hex hash will provide 65,536 list so have to aware this too
 
-## Identity and Access Management and Security
+## Identity and Access Management and Security (IAM)
+offers the following authentication features
+- Managing users and their access
+- Managing federated users and their access
+	- Single sign-on (SSO)
+		- using the credentials of your corporate directory
+	- Support Security Assertion Markup Language (SAML)
+		- identity provider (IdP)
+			- Google, Facebook, Amazon and many others
+			- corporate directory
+### Authorization
+- authorization is mainly done using IAM policies written in JavaSCript Object Notation (JSON)
+- policy can be attached to any IAM entity such as a user, group, or role
+	- a policy, you can either allow or deny access to any resource for any IAM entity
+	- all permissions are implicitly denied by default
+### Auditing
+- CloudTrail log every API call and related event made
+	- ensure compliance with internal policies and regulatory standards
+- CloudTrail service records activity made on your account and delivers log files to yourr Amazon S3 bucket
+
+### Temporary Security Credentials
+- AWS Security Token Service (AWS STS) These temporary security credentials won’t be stored with a user
+	- Dynamically generated whenever a user requests them
+- Once the credentials expire, you won’t be able to use them
+
+### IAM Component
+- User
+	- IAM Users 
+		- permanent identity
+	- Federated users
+		- don't have permanent identities
+- Groups
+- Role
+	- Federated users don not have permanent identities the way you control their permission is by creating a role
+	- Using roles you can define a set of permissions to access the resources that a user or service needs, but the permissions are not attached to an IAM user or group
+	- create a role, you need to specify two policies
+		- trust policy
+			- who can assume the role
+		- access policy
+			- what resources and action is assuming the role is allowed access
+	- always use IAM roles to delegate cross-account access, to delegate access within an account, and to provide access for federated users
+		- no need to share security credentials or store long-term credentials
+	- IAM roles for EC2 instances make it easier for your applications and command-line tools to securely access AWS service APIs from EC2 instances
 
 ## Auto Scaling
 > the ability to spin servers up when your workloads require additional resources and spin them back down when demand drops
@@ -297,7 +339,7 @@ Three main load balancers
 	- With the health check request, you specify the port, protocol, and ping path
 	- if the instance keep failing it will be replaced by a new EC2 instance
 	
-##### Cross-zone load balancing
+#### Cross-zone load balancing
 > distributes the requests evenly across multiple availability zones
 - enabled by default in an application load balancer
 - cross-zone load balancing happens across the targets and not at the AZ level

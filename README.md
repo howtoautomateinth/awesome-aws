@@ -81,8 +81,15 @@ Two main ways of securing the data
 		- S3 will manage encryption keys in KMS, can seperate permissions in KMS additional layer of control
 - S3 Access Control
 	- Access Policies
+		- IAM policy helps you control who can access your data stored in S3
+		- Assign that policy to user,group or a role
 	- Bucket Policies
+		- Also can create at bucket level, which is called a bucket policy
+		- Any object from a particular object will be applied
 	- Access Control List
+		- Each bucket and and object inside the bucket has an ACL associated
+		- Can apply on bucket level and also object level
+		- Coarse-grained control, permissions only to other AWS accounts not users in your account
 - S3 Storage Class
 	- Standard
 		- default storage

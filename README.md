@@ -18,7 +18,7 @@ The storage offerings of AWS can be divided into three major categories
 - Object
 	- Simple Storage Services (S3)
 	- Glacier 
--  Block
+- Block
 	- Instance Store on EC2
 	- Elastic Block Storage (EBS)
 > [Different Between EBS, S3 and EFS](https://dzone.com/articles/confused-by-aws-storage-options-s3-ebs-amp-efs-explained)
@@ -38,13 +38,40 @@ Two main ways of securing the data
 	- [Random VS Sequential 2](https://insightsblog.violinsystems.com/blog/understanding-io-random-vs-sequential)
 - Block Storage Type
 	- EC2 instance store
+		- the instance store is ephemeral
+		- all the data stored in the instance store is gone when EC2 instance is shut down.
+		- no snapshot support for instance store
+		- available in a solid-state drive (SSD) or hybrid hard dive (HDD)
 	- EBS SSD-backed volume
-	- EBS HDD-backed volume
+		- 2 major categories 
+			- SSD-backed storage
+				- random IO
+				- transactional workloadssuch as database and boot volumes
+				- General-Purpose SSD (gp2)
+				- Provisioned IOPS SSD (Provisioned IOPS)
+					- for IO-intense workload such as database
+			- HDD-backed storage
+				- sequential IO
+				- throughput-intensive workloads such as log processing and mapreduce
+				- Throughput-Optimized HDD (st1)
+				- Cold HDD (sc1)
+					- for noncritical support infrequently accessed
+#### FILE STORAGE
+> a file system interface and file system semantics to Amazon EC2 instances
+Interesting Feature
+- Shared storage 
+	- shared across thousands of EC2 instances
+- Elastic and Scalable
+	- can grows to petabyte scale and don't need to specify a provisioned size up front
+	
+#### STORAGE TOOLS
+- AWS SNOWBALL
+	- AWS import/export tool, provides a petabyte-scale data transfer service
+	- Help transfer TB highspeed to Amazon S3
+
 
 #### OBJECT
 ##### AWS Simple Storage Services (S3)
-- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
-	- > In short, Hex Hash Prefix naming help performance in S3 
 - S3 Encryption
 	- SSE with Amazon S3 Key Management (SSE-SE)
 		- S3 will manage encryption keys for you. Each object is encrypted using a per-object key
@@ -58,14 +85,50 @@ Two main ways of securing the data
 	- Access Control List
 - S3 Storage Class
 	- Standard
+		- default storage
+		- fault tolerance
+			- The files in Amazon S3 Standard are synchronously copied across three facilities and designed to sustain the loss of data in two facilities
+		- 99.999999999 percent durability (11 nines)
+		- 99.99 percent availability
 	- Standard Infrequent Access
+		- much cheaper than standard
+		- same durability with standard
+		- 99.9 percent availability
 	- Reduced Redundancy Storage (RRS)
+		- storage option that is used to store noncritical, nonproduction data
+		- 99.99 percent durability
+		- 99.99 percent availability
 	- S3 One Zone-Infrequent Access
+		- accessed less frequently, but requires rapid access when needed
+		- single AZ so not fault tolerance
 	- Glacier
+		- mainly used for data archiving
+		- same durability with standard
+		- three main options for retrieving data
+			- expedited
+				- quick retrieval of data in the range of one to five minutes
+			- standard
+				- standard takes about three to five hours to retrieve the data
+			- bulk retrievals
+				- retrieve large amounts of data such as petabytes of data in a day (five to twelve hours)
 - S3 Object Lifecycle Management
 	- Transition action
+		- objects can be transitioned to another storage class
 	- Expiration action
-- S3 Cross-Region Replication
+		- define what is going to happen when the objects expire
+- S3 Cross-Region Replication (CRR)
+	- replicate the objects in an S3 bucket to a different region
+	- use case: compliance requirement and disaster recovery considerations to keep copies of critical data that are hundreds of miles apart
+
+###### S3 Performance
+
+> Amazon S3 bucket is going to exceed 100 PUT/LIST/DELETE requests per second or 300 GET requests per second
+S3 is partitioning based on the key prefix
+- Reverse the key name string
+	- Normally when doing massive uploads from your application we will increase the sequence by 1 so to prevent partition issues we should reverse the key so it will not be the same
+- Adding a hex hash prefix to a key name 
+	- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
+	- 4-character hex hash will provide 65,536 list so have to aware this too
 
 ## Auto Scaling
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)

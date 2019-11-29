@@ -232,6 +232,8 @@ S3 is partitioning based on the key prefix
 	- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
 	- 4-character hex hash will provide 65,536 list so have to aware this too
 
+## Identity and Access Management and Security
+
 ## Auto Scaling
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers
@@ -252,3 +254,7 @@ S3 is partitioning based on the key prefix
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture
 - [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
 - [Chaos Monkey](https://github.com/Netflix/chaosmonkey) randomly terminates virtual machine instances and containers that run inside of your production environment for testing production server [More](https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116) 
+
+## Reference books 
+- [AWS Certified Solutions Architect Associate All-in-One Exam Guide (Exam SAA-C01)](https://www.amazon.com/Certified-Solutions-Architect-Associate-SAA-C01-ebook/dp/B07GL9N75H)
+- [AWS Whitepaper](https://aws.amazon.com/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc)

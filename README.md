@@ -34,7 +34,7 @@ Three categories
 	- reduces the risk of simultaneous failures that might occur when instances share the same racks
 
 ## Virutal Private Cloud
-### AMAZON VPC COMPONENTS
+### Amazon VPC Components
 #### VPC
 - first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
 	- If you create a VPC with a small size and later realize that you need more IP addresses, you can create a new VPC with a bigger IP address range and then migrate your applications from the old VPC to the new one

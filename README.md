@@ -42,7 +42,7 @@ Three categories
 - Termination
 - Retirement
 
-## Virutal Private Cloud
+## Virtual Private Cloud
 ### Amazon VPC Components
 #### VPC
 - first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)

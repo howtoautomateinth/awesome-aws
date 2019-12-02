@@ -595,6 +595,9 @@ Route 53 supports alias records (also known as zone apex support) which is the r
 > web service used to send notifications from the cloud
 - create a “topic” identifying a specific subject or event type
 	- the publisher and subscriber model
+- SNS endpoints
+	- Email
+	- Short Message Service (SMS)
 	
 ### AWS Step Functions And Amazon Simple Workflow (SWF)
 > fully managed service that makes it easy to coordinate the components of distributed applications and microservices using visual workflow

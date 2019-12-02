@@ -457,8 +457,16 @@ Three Categories
 	- located between your origin web server and the global edge locations that serve content directly to your viewers
 	- Regional edge caches have a larger cache width than any individual edge location, so objects remain in the cache longer at the nearest regional edge caches
 #### Signed URL or Signed Cookies
-- protect it from unauthorized access via CloudFront signed URLs
-	- includes additional information, for example, an expiration date and time, that gives you more control over access to your content
+> CloudFront signed URLs or signed cookies to limit access to files in your Amazon S3 bucket
+- protect it from unauthorized access via CloudFront signed URLs (origin access identity (OAI))
+	- includes additional information, for example, an expiration date and time, that gives you more control over access to your content 
+	
+### Amazon CloudWatch
+> monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time
+- Metrics will be different based on services that we are going to use
+	- EC2
+		- [Instance Metric](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html) beyond of this metric will have to use custom metric e.g. Memory and Disk on EC2
+	
 ### Amazon Route 53
 - DNS translates human-readable names such as www.example.com into the numeric IP addresses such as 192.0.0.3
 	- phone book

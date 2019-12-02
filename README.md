@@ -635,6 +635,9 @@ Route 53 supports alias records (also known as zone apex support) which is the r
 > Some of these enterprises have added more accounts incrementally as individual teams and divisions make the move to the cloud
 - offers policy-based management from multiple AWS accounts. You can create groups of accounts and then apply policies to those groups
 
+### Amazon WorkSpaces
+> is a fully managed desktop computing service in the cloud that allows its customers to provide cloud-based desktops to their end-users. Through this the end users can access the documents, applications, and resources using devices of their choice such as laptops, iPad, Kindle Fire, or Android tablets.
+
 ## AWS Shared Responsibility Model
 ![Shared Responsibility Model](https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg "Shared Responsibility")
 

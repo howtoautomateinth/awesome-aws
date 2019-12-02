@@ -518,6 +518,7 @@ Three Categories
 - TXT (text record)
 
 Route 53 supports alias records (also known as zone apex support) which is the root domain of a web site (example.com, without the www)
+	- so you configure both http://www.example.com and http://example.com to point at the same CloudFront distribution
 
 #### Routing Policies
 - Weighted round robin

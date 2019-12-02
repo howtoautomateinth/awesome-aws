@@ -392,6 +392,17 @@ offers the following authentication features
 - Once you create an Auto Scaling group, you can’t edit the launch configuration tied up with it
 #### Auto Scaling Groups
 > where you define the logic for scaling up and scaling down. It has all the rules and policies that govern how the EC2 instances will be terminated or started
+
+##### Schedule
+- set your own scaling schedule for predictable load changes. For example, every week the traffic to your web application starts to increase on Wednesday, remains high on Thursday, and starts to decrease on Friday
+
+##### Manual
+- you can change the size of an existing Auto Scaling group manually. You can either update the desired capacity of the Auto Scaling group, or update the instances that are attached to the Auto Scaling group
+
+##### Life Cycle Hook
+- The Auto Scaling group responds to scale-out events by launching instances and scale-in events by terminating instances.
+
+##### Dynamic
 - three types of scaling policies
 	- Simple Scaling
 		- select an alarm, which can be CPU utilization, disk read, disk write, network in or network out, and so on, and then scale up or down

@@ -75,6 +75,7 @@ Three categories
 	- NAT instances
 		- in public subnet to allow private subnet through the internet
 		- created in a specific AZ, redundant NAT instances in different AZs
+		- each EC2 instance either sends or receives internet traffic. That is, it itself is the source and / or destination of the traffic. But, the NAT instance is neither the source nor the destination of the traffic. NAT Instances merely act as a gateway for the traffic. Thus, the Source/Destination checks need to be disabled on NAT instance so that the NAT instance can serve as a gateway and allow instances in a private subnets to securely connect to the internet
 	- NAT gateway
 		- same function as that of a NAT instance
 		- you must specify an elastic IP address

@@ -32,6 +32,15 @@ Three categories
 - Spread
 	- group of instances that are each placed on distinct racks, with each rack having its own network and power source
 	- reduces the risk of simultaneous failures that might occur when instances share the same racks
+	
+#### Life Cycle
+![Life Cycle](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/images/instance_lifecycle.png "Life Cycle")
+- Launch
+- Start and Stop
+	- lose any data on the instance store volumes
+- Reboot
+- Termination
+- Retirement
 
 ## Virutal Private Cloud
 ### Amazon VPC Components
@@ -153,8 +162,16 @@ Two main ways of securing the data
 				- sequential IO
 				- throughput-intensive workloads such as log processing and mapreduce
 				- Throughput-Optimized HDD (st1)
+					- for big data, data warehouses 
 				- Cold HDD (sc1)
 					- for noncritical support infrequently accessed
+#### EBS Performance
+- RAID
+	- RAID 0
+		- When I/O performance is more important than fault tolerance; for example, as in a heavily used database
+	- RAID 1
+		- When fault tolerance is more important than I/O performance
+		
 #### FILE STORAGE
 > a file system interface and file system semantics to Amazon EC2 instances
 
@@ -166,7 +183,7 @@ Two main ways of securing the data
 	
 #### STORAGE TOOLS
 - AWS SNOWBALL
-	- AWS import/export tool, provides a petabyte-scale data transfer service
+	- AWS Import / Export tool, provides a petabyte-scale data transfer service
 	- Help transfer TB highspeed to Amazon S3
 
 #### OBJECT

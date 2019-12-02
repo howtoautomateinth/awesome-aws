@@ -489,6 +489,8 @@ Three Categories
 > CloudFront signed URLs or signed cookies to limit access to files in your Amazon S3 bucket
 - protect it from unauthorized access via CloudFront signed URLs (origin access identity (OAI))
 	- includes additional information, for example, an expiration date and time, that gives you more control over access to your content 
+#### Cache Invalidation
+- Manual Clear Cache invalidation tab to Invalidating Files
 	
 ### Amazon CloudWatch
 > monitors your Amazon Web Services (AWS) resources and the applications you run on AWS in real time

@@ -165,15 +165,20 @@ Two main ways of securing the data
 					- for big data, data warehouses 
 				- Cold HDD (sc1)
 					- for noncritical support infrequently accessed
-#### EBS Performance
+##### EBS Performance
 - RAID
 	- RAID 0
 		- When I/O performance is more important than fault tolerance; for example, as in a heavily used database
 	- RAID 1
 		- When fault tolerance is more important than I/O performance
 		
+##### EBS Snapshot
+> Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved
+![EBS Snapshot](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/images/snapshot_1a.png "EBS Snapshot")
+		
 #### FILE STORAGE
 > a file system interface and file system semantics to Amazon EC2 instances
+Amazon Elastic File System (EFS) provides shared access to data via multiple Amazon EC2 instances, with low latencies
 
 ##### Interesting Feature
 - Shared storage 

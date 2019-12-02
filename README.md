@@ -74,6 +74,10 @@ Three categories
 - an EIP is a static IP address to address that issues
 - There is no charge for using an EIP
 
+#### Bastion
+- bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet
+	- through Secure Shell (SSH) connections on Linux
+
 #### VPC Endpoint
 - VPC endpoint does is give you the ability to connect to VPC and AWS services directly using a private connection
 

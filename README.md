@@ -450,6 +450,15 @@ Three main load balancers
 	- Operates on layer 4 as well as on layer 7 of the OSI model
 	- X-Forwarded-For header containing the client IP address
 
+#### Monitor Load Balance
+- CloudWatch metrics
+	- Elastic Load Balancing publishes data points to Amazon CloudWatch about your load balancers and back-end instances
+- Elastic Load Balance Access Log
+	- The access logs for Elastic Load Balancing capture detailed information for requests made to your load balancer and stores them as log files in the Amazon S3 bucket that you specify. Each log contains details such as the time a request was received, the client's IP address, latencies, request path, and server responses
+- CloudTrail logs
+	- Enables you to keep track of the calls made to the Elastic Load Balancing API by or on behalf of your AWS account
+	
+
 - [ALB vs NLB](https://medium.com/containers-on-aws/using-aws-application-load-balancer-and-network-load-balancer-with-ec2-container-service-d0cb0b1d5ae5)
 - [OSI Model Layer](https://medium.com/@madhavbahl10/osi-model-layers-explained-ee1d43058c1f) of seven layers
 

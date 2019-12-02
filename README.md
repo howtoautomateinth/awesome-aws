@@ -185,6 +185,8 @@ Two main ways of securing the data
 ##### EBS Snapshot
 > Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved
 
+- Snapshots occur asynchronously so the EBS volume able to use all the time during snapshot
+
 ![EBS Snapshot](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/images/snapshot_1a.png "EBS Snapshot")
 		
 #### FILE STORAGE

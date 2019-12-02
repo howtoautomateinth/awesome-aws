@@ -261,6 +261,10 @@ Amazon Elastic File System (EFS) provides shared access to data via multiple Ama
 	- replicate the objects in an S3 bucket to a different region
 	- use case: compliance requirement and disaster recovery considerations to keep copies of critical data that are hundreds of miles apart
 
+##### S3 Characteristic
+- read-after-write consistency for PUTS of new objects in your S3 bucket
+- For all other objects (apart from new ones), S3 is an eventually consistent system
+
 ##### S3 Performance
 
 > Amazon S3 bucket is going to exceed 100 PUT/LIST/DELETE requests per second or 300 GET requests per second

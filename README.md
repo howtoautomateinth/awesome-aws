@@ -564,6 +564,9 @@ Three Categories
 > Some of these enterprises have added more accounts incrementally as individual teams and divisions make the move to the cloud
 - offers policy-based management from multiple AWS accounts. You can create groups of accounts and then apply policies to those groups
 
+## AWS Shared Responsibility Model
+![Shared Responsibility Model](https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg "Shared Responsibility")
+
 ## Architecture Guideline
 - [Microservices Design Guide](https://medium.com/platform-engineer/microservices-design-guide-eca0b799a7e8)
 - [Scaling Up to Your First 10 Million Users](https://www.youtube.com/watch?v=Ma3xWDXTxRg)

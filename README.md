@@ -138,6 +138,12 @@ Two main ways of securing the data
 - Data at rest
 	- S3 Encryption
 	- EBS Encryption
+		- Encrypted by Default
+			- Encryption by default has no effect on existing EBS volumes or snapshots
+		- Encrypted EBS Volume from Unencrypted Volume with Existing data on it
+			- Create a Snapshot from unencrypted volume
+			- Copy Unencrypted Snapshot to change it to an Encrypted Snapshot
+			- Create Encrypted EBS Volume from the Encrypted Snapshot
 
 #### BLOCK STORAGE
 

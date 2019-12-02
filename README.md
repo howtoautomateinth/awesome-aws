@@ -181,7 +181,8 @@ Two main ways of securing the data
 		- When I/O performance is more important than fault tolerance; for example, as in a heavily used database
 	- RAID 1
 		- When fault tolerance is more important than I/O performance
-		
+	- RAID 5 and RAID 6 are not recommended for Amazon EBS because the parity write operations of these RAID modes consume some of the IOPS available to your volumes
+	
 ##### EBS Snapshot
 > Snapshots are incremental backups, which means that only the blocks on the device that have changed after your most recent snapshot are saved
 
@@ -456,6 +457,9 @@ Three main load balancers
 	- Supports the classic EC2 instances
 	- Operates on layer 4 as well as on layer 7 of the OSI model
 	- X-Forwarded-For header containing the client IP address
+
+- Support for SSL Termination
+	- HTTPS encryption and decryption process (generally known as SSL termination) to be handled by an Elastic Load Balancer
 
 #### Monitor Load Balance
 - CloudWatch metrics

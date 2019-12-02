@@ -430,6 +430,8 @@ Three main load balancers
 - Low cost and does not require any up-front investment
 - Select the event source to monitor such as an Amazon S3 bucket or Amazon DynamoDB table, event can trigger your function
 - Charged for every 100ms your code executes and the number of times your code is triggered. This cost is also based on the memory consumption
+- When you create or update Lambda functions that use environment variables, AWS Lambda encrypts them using the AWS Key Management Service (Storing Sensitive Information)
+ 
 ### Amazon API Gateway
 > API Gateway is a fully managed service that makes it easy for developers to define, publish, deploy, maintain, monitor, and secure APIs at any scale
 ### Amazon Kinesis

@@ -48,6 +48,9 @@ Three categories
 - first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
 	- If you create a VPC with a small size and later realize that you need more IP addresses, you can create a new VPC with a bigger IP address range and then migrate your applications from the old VPC to the new one
 	- limited to a region
+- AWS will reserved five IP addresses 
+	- For example, in a subnet with CIDR block 10.0.0.0/24 we won't use below IP
+		- 10.0.0.0 - 10.0.0.3 and 10.0.0.255
 	
 #### Subnet
 - Subnet is short for subnetwork, With subnetting you can divide a network into multiple networks

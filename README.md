@@ -503,8 +503,10 @@ Three Categories
 	- phone book
 #### DNS Component
 - A (address record)
+	e.g. 74.125.224.147
 - AAAA (IPv6 address record)
 - CNAME (canonical name record)
+	e.g. www.example.com
 - CAA (certification authority authorization)
 - MX (mail exchange record)
 - NAPTR (name authority pointer record)
@@ -514,6 +516,8 @@ Three Categories
 - SPF (sender policy framework)
 - SRV (service locator)
 - TXT (text record)
+
+Route 53 supports alias records (also known as zone apex support) which is the root domain of a web site (example.com, without the www)
 
 #### Routing Policies
 - Weighted round robin

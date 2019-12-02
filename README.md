@@ -501,6 +501,20 @@ Three Categories
 ### Amazon Route 53
 - DNS translates human-readable names such as www.example.com into the numeric IP addresses such as 192.0.0.3
 	- phone book
+#### DNS Component
+- A (address record)
+- AAAA (IPv6 address record)
+- CNAME (canonical name record)
+- CAA (certification authority authorization)
+- MX (mail exchange record)
+- NAPTR (name authority pointer record)
+- NS (name server record)
+- PTR (pointer record)
+- SOA (start of authority record)
+- SPF (sender policy framework)
+- SRV (service locator)
+- TXT (text record)
+
 #### Routing Policies
 - Weighted round robin
 	- Route traffic to those resources in proportions that you specify

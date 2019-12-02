@@ -295,6 +295,8 @@ offers the following authentication features
 - AWS Security Token Service (AWS STS) These temporary security credentials won’t be stored with a user
 	- Dynamically generated whenever a user requests them
 - Once the credentials expire, you won’t be able to use them
+- LDAP is a protocol for querying a directory
+- SAML is a protocol for supplying security tokens for single sign on
 
 ### IAM Component
 - User
@@ -314,6 +316,7 @@ offers the following authentication features
 	- always use IAM roles to delegate cross-account access, to delegate access within an account, and to provide access for federated users
 		- no need to share security credentials or store long-term credentials
 	- IAM roles for EC2 instances make it easier for your applications and command-line tools to securely access AWS service APIs from EC2 instances
+
 
 ## Database on AWS
 ### Amazon RDS

@@ -112,9 +112,12 @@ Three categories
 - There are no deny rules, so the only way to block traffic is to not allow it
 - stateful
 	- change inbound (ingress) also applied to outbound (egress)
+
 ##### Network Access Control list (NACL)
 - firewall at a subnet level for your VPC
 - default, each custom NACL denies all inbound and outbound traffic until you add rules
+	- able to denied IP, port 
+	- denied rule should be infront of allow rule
 - contain a numbered list of rules that are evaluated in order to decide whether the traffic is allowed to a particular subnet associated with the NACL
 	- starting with the lowest numbered rule
 	- recommend to start with number 100, highest number is 32766

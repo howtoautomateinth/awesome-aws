@@ -21,6 +21,13 @@ Three categories
 	- biding
 	- 90 percent discount compared to on-demand pricing
 	- great for workloads that can restart from where they failed (in other words, can interrupt job)
+	- Spot instance request type
+		- ![Request Type](https://docs.aws.amazon.com/en_us/AWSEC2/latest/UserGuide/images/spot_lifecycle.png "Request Type")
+		- one-time
+			- remains active until Amazon EC2 launches the Spot Instance, the request expires, or you cancel the request. If the Spot price exceeds your maximum price or capacity is not available, your Spot Instance is terminated and the Spot Instance request is closed
+		- persistent
+			- remains active until it expires or you cancel it, even if the request is fulfilled. If the Spot price exceeds your maximum price or capacity is not available, your Spot Instance is interrupted. After your instance is interrupted, when your maximum price exceeds the Spot price or capacity becomes available again, the Spot Instance is started if stopped or resumed if hibernated. If the Spot Instance is terminated, the Spot Instance request is opened again and Amazon EC2 launches a new Spot Instance
+			
 #### Placement Group
 Three categories
 - Cluster
@@ -204,9 +211,25 @@ Amazon Elastic File System (EFS) provides shared access to data via multiple Ama
 	- can grows to petabyte scale and don't need to specify a provisioned size up front
 	
 #### STORAGE TOOLS
-- AWS SNOWBALL
+- AWS Snowball
 	- AWS Import / Export tool, provides a petabyte-scale data transfer service
 	- Help transfer TB highspeed to Amazon S3
+- AWS Storage Gateway 
+> The AWS Storage Gateway service enables hybrid cloud storage between on-premises environments and the AWS Cloud
+	- File Gateway
+		- such as NFS
+		- 
+![File Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/file-gateway-concepts-diagram.png "File Gateway")
+	- Tape Gateway
+		- iSCSI virtual tape library (VTL) interface
+		- ![Tape Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/Gateway-VTL-Architecture2-diagram.png "Tape Gateway")
+	- Volume Gateway
+		- cached mode
+			- primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access
+			- ![Cache](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-cached-diagram.png "Cache")
+		- stored mode
+			- primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS
+			- ![Stored](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-stored-diagram.png "Stored")
 
 #### OBJECT
 ##### AWS Simple Storage Services (S3)
@@ -266,8 +289,9 @@ Amazon Elastic File System (EFS) provides shared access to data via multiple Ama
 	- use case: compliance requirement and disaster recovery considerations to keep copies of critical data that are hundreds of miles apart
 
 ##### S3 Characteristic
-- read-after-write consistency for PUTS of new objects in your S3 bucket
+- Read-after-write consistency for PUTS of new objects in your S3 bucket
 - For all other objects (apart from new ones), S3 is an eventually consistent system
+- Also support for HTTP range request to get information in HTTP header [1](https://docs.aws.amazon.com/en_us/AmazonS3/latest/API/API_GetObject.html),[2](https://developer.mozilla.org/en-US/docs/Web/HTTP/Range_requests)
 
 ##### S3 Performance
 
@@ -325,7 +349,10 @@ offers the following authentication features
 		- no need to share security credentials or store long-term credentials
 	- IAM roles for EC2 instances make it easier for your applications and command-line tools to securely access AWS service APIs from EC2 instances
 
-
+#### IAM Plugin
+- IAM Authentication
+	- IAM database authentication, you use an authentication token when you connect to your DB cluster. An authentication token is a string of characters that you use instead of a password. After you generate an authentication token, it's valid for 15 minutes before it expires. If you try to connect using an expired token, the connection request is denied.
+	
 ## Database on AWS
 ### Amazon RDS
 > RDS fully manages the host, operating system, and database version you are running on
@@ -386,6 +413,9 @@ offers the following authentication features
 		- performs a few roles. It acts as a SQL endpoint for the applications
 		- communicates with the compute nodes for processing any query
 	- Compute node
+- Able to span to x regions by using Amazon Kinesis setup in x regions and Redshift using that subscriber 
+- Cross-region snapshots to the other regions provide rebuild [1](https://aws.amazon.com/th/blogs/aws/automated-cross-region-snapshot-copy-for-amazon-redshift/)
+
 ##### Encryption
 - If the encryption is enabled in a cluster, it becomes immutable which means you can't disable
 	- If at a later phase you decide to encrypt the data, then the only way is to unload your data from the existing cluster and reload it in a new cluster with the encryption setting
@@ -396,6 +426,8 @@ offers the following authentication features
 - Benefits of Amazon DynamoDB
 	- Scalable
 		- running a larger NoSQL cluser.DynamoDB is scalable and can automatically scale up and down depending on your application request
+- DynamoDB Accelerator (DAX)
+> is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement
 
 ### Amazon ElasticCache
 > is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud
@@ -524,6 +556,8 @@ Three Categories
 > allows you to distribute content with low latency and provides high data transfer speeds
 - ensures that end-user requests are served by the closest edge location
 - pay only for the data transfers and requests you actually use
+	- Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency
+	
 ### CloudFront Key Concepts
 - Edge Location
 	- data centers called edge locations

@@ -215,21 +215,18 @@ Amazon Elastic File System (EFS) provides shared access to data via multiple Ama
 	- AWS Import / Export tool, provides a petabyte-scale data transfer service
 	- Help transfer TB highspeed to Amazon S3
 - AWS Storage Gateway 
-> The AWS Storage Gateway service enables hybrid cloud storage between on-premises environments and the AWS Cloud
-	- File Gateway
-		- such as NFS
-		- 
-![File Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/file-gateway-concepts-diagram.png "File Gateway")
-	- Tape Gateway
-		- iSCSI virtual tape library (VTL) interface
-		- ![Tape Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/Gateway-VTL-Architecture2-diagram.png "Tape Gateway")
-	- Volume Gateway
-		- cached mode
-			- primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access
-			- ![Cache](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-cached-diagram.png "Cache")
-		- stored mode
-			- primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS
-			- ![Stored](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-stored-diagram.png "Stored")
+	- The AWS Storage Gateway service enables hybrid cloud storage between on-premises environments and the AWS Cloud
+		- File Gateway
+			- such as NFS
+			- ![File Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/file-gateway-concepts-diagram.png "File Gateway")
+		- Tape Gateway
+			- iSCSI virtual tape library (VTL) interface 
+			- ![Tape Gateway](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/Gateway-VTL-Architecture2-diagram.png "Tape Gateway")
+		- Volume Gateway
+			- cached mode
+				- primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access ![Cache](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-cached-diagram.png "Cache")
+			- stored mode
+				- primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS ![Stored](https://docs.aws.amazon.com/en_us/storagegateway/latest/userguide/images/aws-storage-gateway-stored-diagram.png "Stored")
 
 #### OBJECT
 ##### AWS Simple Storage Services (S3)

@@ -108,12 +108,19 @@ Three categories
 
 #### VPC Peering
 - VPC peering helps to connect one virtual private cloud to another and route the traffic across the virtual private clouds
+	- between two VPCs
 - You can’t peer VPCs across regions
 - one-to-one relationship two VPCs
 - can not use transit point between VPC need to peering itself
 
 #### VPC Flow Logs
 - enable you to capture information about the IP traffic going to and from network interfaces in your VPC
+
+#### ClassicLink
+- allows EC2 instances in the EC2-Classic platform to communicate with instances in a VPC using private IP addresses
+
+#### PrivateLink
+- allows you to publish an "endpoint" that others can connect with from their own VPC. It's similar to a normal VPC Endpoint, but instead of connecting to an AWS service, people can connect to your endpoint. Think of it as a way to publish a private API endpoint without having to go via the Internet [Ref.](https://stackoverflow.com/questions/57871544/what-is-difference-between-aws-vpc-private-link-and-vpc-peering)
 
 #### Accessing and Permission
 ##### Security Group
@@ -538,6 +545,13 @@ Three main load balancers
  
 ### Amazon API Gateway
 > API Gateway is a fully managed service that makes it easy for developers to define, publish, deploy, maintain, monitor, and secure APIs at any scale
+
+- Benefits
+	- API Logging
+	- Caching
+	- Throttling
+	- Bursting and Monitoring
+	
 ### Amazon Kinesis
 > ability to process and analyze becomes extremely important because that governs how you are going to serve your customers
 - traditional analytics, you gather the data, load it periodically into a database, and analyze it hours, days, or weeks later

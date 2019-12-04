@@ -19,6 +19,7 @@ Three categories
 			- have ability and flexibility to exchange the instance from one class of family to another class if your computing need changes
 - Spot instance
 	- biding
+		- you will not be charged for the partial hour that your instance has run. You are charged the Spot market price (not your bid price) for as long as the Spot Instance runs
 	- 90 percent discount compared to on-demand pricing
 	- great for workloads that can restart from where they failed (in other words, can interrupt job)
 	- Spot instance request type

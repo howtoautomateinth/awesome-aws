@@ -94,6 +94,7 @@ Three categories
 > Every time you launch a new EC2 instance in AWS, you get a new IP address. Sometimes it becomes a challenge since you need to update all the applications every time there is an IP address change
 - an EIP is a static IP address to address that issues
 - There is no charge for using an EIP
+	- it will charge when it is allocated and associated with a stopped instance 
 
 #### Bastion
 - bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet

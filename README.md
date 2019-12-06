@@ -621,8 +621,14 @@ Route 53 supports alias records (also known as zone apex support) which is the r
 	- Best latency, you can use latency-based routing
 - Failover routing
 	- When this region fails, you can do failover routing and point to a static web site running from a different region
+	- Failover mode
+		- Active-Active
+			- all of your resources to be available the majority of the time. When a resource becomes unavailable, Route 53 can detect that it's unhealthy and stop including it when responding to queries.
+		- Active-Passive
+			- a primary resource or group of resources to be available the majority of the time and you want a secondary resource or group of resources to be on standby in case all the primary resources become unavailable
 - Geo DNS routing 
 	- Directing requests to specific endpoints based on the geographic location from which the request originates
+
 ##### Tips
 - [How DNS Works](https://howdns.works/)
 - [How HTTPS Works](https://howhttps.works/)

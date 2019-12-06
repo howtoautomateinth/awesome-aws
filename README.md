@@ -88,6 +88,7 @@ Three categories
 		- same function as that of a NAT instance
 		- you must specify an elastic IP address
 		- created in a specific AZ, redundant NAT gateway in different AZs
+		- The NAT gateway sends the traffic to the internet gateway using the NAT gateway’s Elastic IP address as the source IP address
 - use case: If you want to do some firmware updates in the database server or if you want to download some database patches, how do you download them? Network Address Translation (NAT) tries to solve that problem
 
 #### Elastic IP Address (EIP)

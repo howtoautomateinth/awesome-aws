@@ -56,6 +56,7 @@ Three categories
 - first step of VPC is deciding the IP range by providing a Classless Inter-Domain Routing (CIDR) block, The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses)
 	- If you create a VPC with a small size and later realize that you need more IP addresses, you can create a new VPC with a bigger IP address range and then migrate your applications from the old VPC to the new one
 	- limited to a region
+	- It's not possible to modify the IP address range of an existing VPC or subnet. You must delete the VPC or subnet, and then create a new VPC or subnet with your preferred CIDR block.
 - AWS will reserved five IP addresses 
 	- For example, in a subnet with CIDR block 10.0.0.0/24 we won't use below IP
 		- 10.0.0.0 - 10.0.0.3 and 10.0.0.255
@@ -100,6 +101,8 @@ Three categories
 #### Bastion
 - bastion hosts in your VPC environment enables you to securely connect to your Linux instances without exposing your environment to the Internet
 	- through Secure Shell (SSH) connections on Linux
+- Elastic IP addresses are associated with the bastion instances to make it easier to remember and allow these IP addresses from on-premises firewalls
+	- else should use auto-assigned Public IP address
 
 #### VPC Endpoint
 - VPC endpoint does is give you the ability to connect to VPC and AWS services directly using a private connection
@@ -122,6 +125,11 @@ Three categories
 
 #### PrivateLink
 - allows you to publish an "endpoint" that others can connect with from their own VPC. It's similar to a normal VPC Endpoint, but instead of connecting to an AWS service, people can connect to your endpoint. Think of it as a way to publish a private API endpoint without having to go via the Internet [Ref.](https://stackoverflow.com/questions/57871544/what-is-difference-between-aws-vpc-private-link-and-vpc-peering)
+
+#### VPC Monitoring
+- Cloudwatch
+	- TunnelState Metric
+		- The state of the tunnel. For static VPNs, 0 indicates DOWN and 1 indicates UP
 
 #### Accessing and Permission
 ##### Security Group
@@ -310,6 +318,11 @@ S3 is partitioning based on the key prefix
 	- [Optimized Performance S3 Naming](https://btuanexpress.net/optimized-performance-s3-naming/)
 	- 4-character hex hash will provide 65,536 list so have to aware this too
 
+#### Tools
+- AWS Data Pipeline 
+	- is a web service that helps you reliably process and move data between different AWS compute and storage services, as well as on-premises data sources, at specified intervals. With AWS Data Pipeline, you can regularly access your data where it’s stored, transform and process it at scale, and efficiently transfer the results to AWS services such as Amazon S3, Amazon RDS, Amazon DynamoDB, and Amazon EMR.
+	- from a DynamoDB table to a file in an Amazon S3 bucket
+
 ## Identity and Access Management and Security (IAM)
 offers the following authentication features
 - Managing users and their access
@@ -325,14 +338,19 @@ offers the following authentication features
 - policy can be attached to any IAM entity such as a user, group, or role
 	- a policy, you can either allow or deny access to any resource for any IAM entity
 	- all permissions are implicitly denied by default
+	
 ### Auditing
 - CloudTrail log every API call and related event made
 	- ensure compliance with internal policies and regulatory standards
 - CloudTrail service records activity made on your account and delivers log files to yourr Amazon S3 bucket
+- AWS KMS is integrated with AWS CloudTrail, a service that provides a record of actions performed by a user, role, or an AWS service in AWS KMS
 
 ### Temporary Security Credentials
 - AWS Security Token Service (AWS STS) These temporary security credentials won’t be stored with a user
 	- Dynamically generated whenever a user requests them
+- Web Identity Federation
+	- you don't need to create custom sign-in code or manage your own user identities. Instead, users of your app can sign in using a well-known external identity provider (IdP), such as Login with Amazon, Facebook, Google, or any other OpenID Connect (OIDC)-compatible IdP
+	-  with AWS STS enables you to create apps where users can sign in using a web-based identity provider like Login
 - Once the credentials expire, you won’t be able to use them
 - LDAP is a protocol for querying a directory
 - SAML is a protocol for supplying security tokens for single sign on
@@ -430,6 +448,8 @@ offers the following authentication features
 ### Amazon DynamoDB
 > fully managed NoSQL database service that provides fast and predictable performance with seamless scalability
 - can be used in advertising for capturing browser cookie state, in mobile applications for storing application data and session state, in gaming applications for storing user preferences and application state and for storing players’ game state, in consumer “voting” applications for reality TV contests, in Super Bowl commercials, in large-scale
+- Local development
+	- The downloadable version of DynamoDB lets you write and test applications without accessing the DynamoDB web service
 - Benefits of Amazon DynamoDB
 	- Scalable
 		- running a larger NoSQL cluser.DynamoDB is scalable and can automatically scale up and down depending on your application request

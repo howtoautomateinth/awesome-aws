@@ -353,7 +353,8 @@ offers the following authentication features
 	-  with AWS STS enables you to create apps where users can sign in using a web-based identity provider like Login
 - Once the credentials expire, you won’t be able to use them
 - LDAP is a protocol for querying a directory
-- SAML is a protocol for supplying security tokens for single sign on
+- SAML is a protocol for supplying security tokens for single sign on 
+- [LDAP & SAML Discussion](https://acloud.guru/forums/aws-certified-solutions-architect-associate/discussion/-KaXoTgYNh8TBNtuhVtc/which-technique-can-be-used-to-integrate-aws-iam-identity-and-access-management-)
 
 ### IAM Component
 - User

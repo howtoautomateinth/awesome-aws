@@ -759,3 +759,4 @@ Route 53 supports alias records (also known as zone apex support) which is the r
 - [AWS Certified Solutions Architect Associate All-in-One Exam Guide (Exam SAA-C01)](https://www.amazon.com/Certified-Solutions-Architect-Associate-SAA-C01-ebook/dp/B07GL9N75H)
 - [AWS Whitepaper](https://aws.amazon.com/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc)
 - [Udemy acloudguru](https://www.udemy.com/course/aws-certified-solutions-architect-associate/)
+- [Builder Article](https://aws.amazon.com/builders-library/?cards-body.sort-by=item.additionalFields.customSort&cards-body.sort-order=asc)

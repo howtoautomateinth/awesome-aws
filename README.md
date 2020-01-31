@@ -654,6 +654,23 @@ Route 53 supports alias records (also known as zone apex support) which is the r
 - [How DNS Works](https://howdns.works/)
 - [How HTTPS Works](https://howhttps.works/)
 
+### Amazon ECS concept
+Docker container service that handles the orchestration and provisioning of Docker containers
+
+#### ECS Terms
+- Cluster
+- Task Definition
+	-  describes how a docker container should launch
+- Task
+	- instance of Task Definition (running container with settings defined)
+- Service
+	- long running task of the same Task Definition
+- Container Instance
+	- EC2 instance that is part of an ECS Cluster and has docker and the ecs-agent running on it
+
+![overview](https://miro.medium.com/max/668/1*k29gxIwwhDaP-Ge-G-yXCQ.png)
+*Thanks image from [her](https://medium.com/boltops/gentle-introduction-to-how-aws-ecs-works-with-example-tutorial-cea3d27ce63d)*
+
 ### AWS Web Application Firewall (AWF)
 > protect web sites and applications against attacks that could affect application availability, result in data breaches, cause downtime, compromise security, or consume excessive resources
 - Integrated

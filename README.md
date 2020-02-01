@@ -668,9 +668,9 @@ Docker container service that handles the orchestration and provisioning of Dock
 - Container Instance
 	- EC2 instance that is part of an ECS Cluster and has docker and the ecs-agent running on it
 
-![overview](https://miro.medium.com/max/668/1*k29gxIwwhDaP-Ge-G-yXCQ.png)
+![overview](https://cdn-media-1.freecodecamp.org/images/scH1QJHgrQ6NgA1jQo9ITuCiQGkAawRHmzSc)
 
-*Thanks image from [here](https://medium.com/boltops/gentle-introduction-to-how-aws-ecs-works-with-example-tutorial-cea3d27ce63d)*
+*Thanks image from [here](https://www.freecodecamp.org/news/amazon-ecs-terms-and-architecture-807d8c4960fd/)*
 
 ### AWS Web Application Firewall (AWF)
 > protect web sites and applications against attacks that could affect application availability, result in data breaches, cause downtime, compromise security, or consume excessive resources

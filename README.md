@@ -659,12 +659,13 @@ Docker container service that handles the orchestration and provisioning of Dock
 
 #### ECS Terms
 - Cluster
+	- a logic group of EC2 instances
 - Task Definition
-	-  describes how a docker container should launch
+	- a blueprint that describes how a docker container should launch
 - Task
 	- instance of Task Definition (running container with settings defined)
 - Service
-	- long running task of the same Task Definition
+	- long running Task of the same Task Definition, if a task in a service stops, the task is killed and a new task is launched
 - Container Instance
 	- EC2 instance that is part of an ECS Cluster and has docker and the ecs-agent running on it
 

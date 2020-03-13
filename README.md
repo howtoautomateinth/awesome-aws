@@ -758,6 +758,9 @@ Docker container service that handles the orchestration and provisioning of Dock
 ### Amazon WorkSpaces
 > is a fully managed desktop computing service in the cloud that allows its customers to provide cloud-based desktops to their end-users. Through this the end users can access the documents, applications, and resources using devices of their choice such as laptops, iPad, Kindle Fire, or Android tablets.
 
+## Tips
+- AWS commandline able to manage multiple credential by using `--profile [Name]` 
+
 ## AWS Shared Responsibility Model
 ![Shared Responsibility Model](https://d1.awsstatic.com/security-center/Shared_Responsibility_Model_V2.59d1eccec334b366627e9295b304202faf7b899b.jpg "Shared Responsibility")
 

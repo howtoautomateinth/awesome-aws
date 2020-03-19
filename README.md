@@ -775,7 +775,8 @@ Docker container service that handles the orchestration and provisioning of Dock
 - [AWS 2D Diagram](https://www.draw.io) visualize architecture
 - [AWS 3D Diagram](https://cloudcraft.co) visualize architecture
 - [CIDR RANGE VISUALIZER](http://cidr.xyz/) 
-- [Chaos Monkey](https://github.com/Netflix/chaosmonkey) randomly terminates virtual machine instances and containers that run inside of your production environment for testing production server [More](https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116) 
+- [Chaos Monkey](https://github.com/Netflix/chaosmonkey) randomly terminates virtual machine instances and containers that run inside of your production environment for testing production server [More](https://medium.com/netflix-techblog/the-netflix-simian-army-16e57fbab116)
+- [AWS Infrastructure](https://www.infrastructure.aws/)
 
 ## Reference books 
 - [AWS Certified Solutions Architect Associate All-in-One Exam Guide (Exam SAA-C01)](https://www.amazon.com/Certified-Solutions-Architect-Associate-SAA-C01-ebook/dp/B07GL9N75H)
